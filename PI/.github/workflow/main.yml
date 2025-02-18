@@ -1,0 +1,23 @@
+on:
+  push:
+    branches:
+      - master
+
+name: 🚀 Deploy aplicação Hostgator
+jobs:
+
+  deploy-infinity:
+    name: 🎉 Deploy Hostgator
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v3
+
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@4.3.3
+      with:
+        server: ftpupload.net
+        username: if0_38143302
+        password:  mJQXZgxDbxH
+        local-dir: /
+        server-dir: /htdocs/
